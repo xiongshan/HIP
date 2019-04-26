@@ -744,7 +744,7 @@ hipError_t ihipDevice_t::initProperties(hipDeviceProp_t* prop) {
         err = HSA_STATUS_SUCCESS;
     }
     DeviceErrorCheck(err);
-    prop->isMultiGpuBoard = 0 ? gpuAgentsCount < 2 : 1;
+    prop->isMultiGpuBoard = gpuAgentsCount < 2 ? 0 : 1;
 
     // Get agent name
 
